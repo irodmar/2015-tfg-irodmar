@@ -1,0 +1,145 @@
+\documentclass[oneside,a4paper,12pt]{book}
+\usepackage{subcaption}
+\usepackage[lmargin=2.8cm, rmargin=2.8cm, tmargin=3.3cm, bmargin=3.3cm]{geometry}
+\linespread{1.1}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel} % espanol
+\usepackage{multirow} % Para las tablas
+
+\usepackage{graphicx}%para imagenes
+\graphicspath{ {img/} }
+\usepackage{url}
+
+\usepackage{varwidth} % cajas
+
+\title{WebRTC Drone}
+\author{Iván Rodríguez-Bobada Martín}
+
+\usepackage{enumerate} % enumerados
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\renewcommand{\lstlistingname}{Listado} % Cambiar pie de pagina de ingles a español
+
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{white},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   frame=single,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+
+
+
+
+
+\begin{document}
+
+\include{portada}
+
+\clearpage
+\thispagestyle{empty}
+
+\vspace{5cm}
+\makebox[15cm][r]{
+\begin{tabular}{ll}
+&\emph{A mis padres y hermanos,}\\
+&\emph{que siempre han estado a mi lado,}\\
+&\emph{y siempre lo estarán.}\\
+&\\
+&\emph{Y a mis amigos, por ser }\\
+&\emph{verdaderamente mis amigos.}\\
+&\\
+&\emph{Gracias.}
+\\
+\end{tabular}
+}
+
+\let\OLDthebibliography=\thebibliography
+\def\thebibliography#1{\OLDthebibliography{#1}%
+  \addcontentsline{toc}{chapter}{\bibname}}
+
+\tableofcontents
+\listoffigures
+
+
+\include{1-introduccion}
+\include{2-objetivos}
+\include{3-infraestructura-software}
+\include{4-solucion}
+\include{5-experimentos}
+\include{6-conclusion}
+
+\begin{thebibliography}{}
+
+\bibitem{Mediawiki} Mediawiki oficial del proyecto (WebRTC en un drone) \url{http://jderobot.org/Irodmar-tfg}
+\bibitem{Repositorio} Repositorio oficial del proyecto (WebRTC en un Drone) \url{https://github.com/RoboticsURJC-students/2015-tfg-irodmar} 
+\bibitem{jderobot} Proyecto JdeRobot \url{http://jderobot.org/} 
+\bibitem{jderobot_repo} Repositorio de JdeRobot \url{https://github.com/RoboticsURJC/JdeRobot} 
+\bibitem{ArDroneServer} Mediawiki de Alberto Martín (ArDroneServer) \url{http://jderobot.org/Amartinflorido-tfg}
+\bibitem{surveillance4.0} Mediawiki Daniel Castellano (Surveillance 4.0) \url{http://jderobot.org/D.castellanob-pfc} 
+\bibitem{surveillance5.1} Mediawiki Edgar Barrero (Surveillance 5.1) \url{http://jderobot.org/Aerobeat-colab}
+\bibitem{teleoperadoresyvisoresweb} Mediawiki Aitor Martínez \url{http://jderobot.org/Aitormf-tfg}
+\bibitem{Pagina WebRTC} Página oficial de WebRTC \url{https://webrtc.org}
+\bibitem{WebRTC} W3C: Borrador de la norma WebRTC \url{http://www.w3.org/TR/webrtc/}
+\bibitem{WebRTC_book} Real-Time Communication with WebRTC \url{http://shop.oreilly.com/product/0636920030911.do}
+\bibitem{orilley} Capítulo 18 (WebRTC) del libro \emph{High Performance Browser Networking} \url{http://chimera.labs.oreilly.com/books/1230000000545/ch18.html}
+\bibitem {WebRTC experiment} WebRTC-experiment \url{https://www.webrtc-experiment.com}
+\bibitem{JSEP} JSEP  \url{https://rtcweb-wg.github.io/jsep/}
+\bibitem{JSEP2} Wikipedia: JSEP  \url{https://es.wikipedia.org/wiki/JSON}
+\bibitem{Senalizacion1} Señalización en \emph{Mozilla Foundation} \url{https://developer.mozilla.org/es/docs/Web/API/WebRTC_API/Connectivity}
+\bibitem{Senalizacion2} HTML5Rocks.com: Señalización \url{http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/}
+\bibitem{Senalizacion3} WebRTC-Experiment: Señalización \url{https://www.webrtc-experiment.com/docs/WebRTC-Signaling-Concepts.html}
+\bibitem{WebRTC} Seguridad en WebRTC \url{https://rtcweb-wg.github.io/security-arch/}
+\bibitem{SIP} Session Initiation Protocol \url{https://es.wikipedia.org/wiki/Session_Initiation_Protocol}
+\bibitem{ORTC} ORTC \url{http://ortc.org/wp-content/uploads/2015/10/ortc.html}
+\bibitem{jqueryflightindicator} Relojes de navegación \url{http://sebmatton.github.io/flightindicators/}
+\bibitem{bateria} Repositorio batería HTML5 y CSS3 \url{http://codepen.io/jkantner/pen/QybzKL}
+\bibitem{gazebo} Página oficial Gazebo \url{http://gazebosim.org/}
+\bibitem{ice} Página oficial ICE  \url{http://www.zeroc.com/}
+\bibitem{ice_manual}Ice 3.5.1 Documentation  \url{https://doc.zeroc.com/display/Ice35/Home}
+\bibitem{slicecomp} Uso de los compiladores de Slice \url{https://doc.zeroc.com/display/Ice36/Using+the+Slice+Compilers}
+\bibitem{icejs} Página de Ice for Javascript  \url{https://zeroc.com/labs/icejs/index.html}
+\bibitem{icews} Websockets en ICE \url{https://zeroc.com/labs/icejs/websocket.html}
+\bibitem{threejs} Página de Three.js \url{http://threejs.org/}
+\bibitem{threejs_doc} Documentación de Three.js \url{http://mrdoob.github.io/three.js/docs/}
+\bibitem{threejs_curso} Curso de Three.js \url{http://stemkoski.github.io/Three.js/}
+\bibitem{jquery} Página de JQuery \url{https://jquery.com/}
+
+\end{thebibliography} 
+
+
+
+\end{document}
